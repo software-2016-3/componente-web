@@ -1,0 +1,117 @@
+<html>
+	<head>
+		<title>
+			Menu desplegable
+		</title>
+		
+		<link rel="stylesheet" type="text/css" href="estilo.css">
+		<link rel="stylesheet" href="css/normalize.css">
+	    <script src="js/jquery.js" type="text/javascript"></script>
+	    <script src="js/modernizr.js" type="text/javascript"></script>
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<script>
+	$(window).resize(function() {
+	var width = window.innerWidth;
+	var percent = width * 100 / 1024;
+	console.log('Percent: '+percent);
+ 
+	if(percent >= 100){
+		$('#recommended-popup').css('font-size','1.406em');
+	}
+	else if(percent < 100){
+		var fontSize = percent * 1.406 / 100;
+		$('#recommended-popup').css('font-size',fontSize+'em');
+	}
+ 
+	/*$('#recommended-popup').css('font-size',1.406-(size*2)+'em');
+	$('#recommended-popup').css('width',29.8-size+'%');
+	$('#rec-left-title').css('width',40.412+size+'%');*/
+});
+		$(document).ready(function() {
+			if(!Modernizr.meter){
+				alert('Sorry your brower does not support HTML5 progress bar');
+			} else {
+				var progressbar = $('#progressbar'),
+					max = progressbar.attr('max'),
+					time = (1000/max)*5,	
+			        value = progressbar.val();
+
+			    var loading = function() {
+			        value += 1;
+			        var val = progressbar.val(value);
+			        
+			        $('.progress-value').html(value + 'Km');
+
+			        if (value == 777) {
+			            clearInterval(animate);
+			            $('.progress-value').html(777 + 'Km');
+			        }
+			    };
+			    var animate = setInterval(function() {
+			        loading();
+			    }, time);
+			};
+		});
+	</script>
+	</head>
+	<body >
+	
+        <div class="menu">
+			<ul class="nav">
+			    <li id="motiva"><a href="" id="motiva">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="icon-list"></span> </a>
+				<li><a href=""><span class="icon-list"></span>Recorridos </a>
+					<ul class="nav1">
+
+						<li><a href="">Lista de recorridos</a></li>
+						<li><a href="">Mostrar recorridos</a></li>
+						<li><a href="">Perfil topografico</a></li>
+						<li><a href="">Resumen</a><span class="icon-chevron-small-right"></span> </a>
+						</li>
+					</ul>
+				</li>
+				<li><a href=""><span class="icon-cog"></span>Recorridos Sugeridos</a>
+
+				</li>
+				<li><a href=""><span class="icon-bookmark"></span>Descarga&nbsp;&nbsp</a>
+
+				</li>
+			</ul>
+		</div>
+		<br>
+	</br>
+	<br>
+	</br>
+	
+	
+	<div align=right  >
+	
+	<div  align=right style="background-image:url(transparente.png);width:35% ;height:90%;font-family:verdana;color:white ; text-align: center">
+	<br>
+	</br>
+    <div class="circulo" style=" margin:0% 0% 0% 32%"><br>
+	<br><br><br><br><br><br><br><br><div>
+	<p style="margin:0% 0% 0% -18%; font-size:20pt;font-weight: bold;">777Km/1000Km</p><br/>
+    </div>
+    <br><br>
+	</div>
+	<br><br><div class="demo-wrapper html5-progress-bar">
+		<div class="progress-bar-wrapper">
+			<progress id="progressbar" value="0" max="1000"></progress>
+			<span class="progress-value">0%</span>
+		</div>
+	</div>
+	<br><br>
+	    <p style="margin:0% 0% 0% -8%; font-size:12pt;font-weight: bold;">Velocidad promedio: 17Km/H</p><br/>
+		<p style="margin:0% 0% 0% -8%; font-size:12pt;font-weight: bold;">Calorias consumidas: 777Cal</p><br/>
+		<p style="margin:0% 0% 0% -8%; font-size:12pt;font-weight: bold;">Mejor d&iacute;a: 28 de mayo / + 17Km</p><br/>
+
+      </div>       
+	
+		
+	</div> 
+		
+      
+	
+	</body>
+	
+</html>
