@@ -6,10 +6,57 @@
 		
 		<link rel="stylesheet" type="text/css" href="estilo.css">
 		<link rel="stylesheet" href="css/normalize.css">
+		 <link rel="stylesheet" href="/maps/documentation/javascript/demos/demos.css">
 	    <script src="js/jquery.js" type="text/javascript"></script>
 	    <script src="js/modernizr.js" type="text/javascript"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-qq6MWiT9hdeNqvCQjZPpuSZI0wRJ5qw&callback=initMap"
+    async defer></script>
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<script>
+	 function initMap() {
+        var inicio = {lat: 7.0580321, lng: -73.1599663};
+        var stop = {lat: 7.1393437, lng: -73.1224251}
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+		  mapTypeId: google.maps.MapTypeId.SATELLITE,
+          center: inicio,
+          scrollwheel: true,
+		  
+          zoom: 7
+		  
+        });
+
+        var directionsDisplay = new google.maps.DirectionsRenderer({
+          map: map
+		  
+        });
+		calcRoute();
+        function calcRoute() {
+                var second  = new google.maps.LatLng(7.134596, -73.121662);
+                var first = new google.maps.LatLng(7.153249, -73.133315);
+
+                
+        // Set destination, origin and travel mode.
+        var request = {
+          destination: stop,
+          origin: inicio,
+		   waypoints: [{location: first, stopover: false},
+                        {location: second, stopover: false}],
+                    optimizeWaypoints: true,
+          travelMode: 'WALKING'
+        };
+
+        // Pass the directions request to the directions service.
+        var directionsService = new google.maps.DirectionsService();
+        directionsService.route(request, function(response, status) {
+          if (status == 'OK') {
+            // Display the route on the map.
+            directionsDisplay.setDirections(response);
+          }
+        });
+      }
+	  }
+  
 	$(window).resize(function() {
 	var width = window.innerWidth;
 	var percent = width * 100 / 1024;
@@ -52,10 +99,11 @@
 			    }, time);
 			};
 		});
+		
 	</script>
 	</head>
 	<body >
-	
+	<div align=center>
         <div class="menu">
 			<ul class="nav">
 			    <li id="motiva"><a href="" id="motiva">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="icon-list"></span> </a>
@@ -83,9 +131,14 @@
 	</br>
 	
 	
-	<div align=right  >
 	
-	<div  align=right style="background-image:url(transparente.png);width:35% ;height:90%;font-family:verdana;color:white ; text-align: center">
+
+
+<div  class="mapa"  id="map" style="position.relative; width:600px;height:450px; margin:5% 0% 0% 10%"></div> 
+
+
+	
+	<div  class="sesion"  align=right style="background-image:url(transparente.png);width:35% ;height:90%;font-family:verdana;color:white ; text-align: center">
 	<br>
 	</br>
     <div class="circulo" style=" margin:0% 0% 0% 32%"><br>
@@ -108,9 +161,10 @@
       </div>       
 	
 		
-	</div> 
-		
       
+	
+		
+      </div>  
 	
 	</body>
 	
