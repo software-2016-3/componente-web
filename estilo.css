@@ -1,4 +1,13 @@
 
+* {
+	padding:0;
+	margin:0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+ 
+
 body {
 background-image: url('fondo1.jpeg');
 background-repeat: repeat-y;
@@ -56,6 +65,7 @@ ul,ol{
 .nav li:hover > ul{
 	display: block;
 	position: absolute;
+
 }
 .nav1 {
 	position:absolute;
@@ -64,6 +74,7 @@ ul,ol{
 .nav1 li a {
 	background-color: black;
    color: white;
+
 
     padding: 36.5px 99px;
 	text-decoration:none;
@@ -113,7 +124,7 @@ body {
 .html5-progress-bar progress {
 	background-color: #f3f3f3;
 	border: 0;
-	width: 80%;
+	width: 70%;
 	height: 18px;
 	border-radius: 9px;
 }
@@ -179,3 +190,57 @@ body {
 .mapa{ float:left;
 z-index:0;
 }
+.topografico{ float:left;
+z-index:0;
+}
+.resumen{ float:left;
+z-index:0;
+}
+.recorridos div  {
+	float: left;
+	background-color: red;
+	width: 40%;
+	height: 40%;
+}
+.caja_cris
+{
+	margin-left: 0%;
+	background-image:url(transparente.png);
+	width:35% ;
+	height:90%;
+	font-family:verdana;
+	color:white ;
+	text-align: center;
+
+
+}
+.info{
+	width:100%;
+	margin-top: 2%;
+	height: 60%;
+	background:red;
+
+}
+.col-md-9{
+	font-family: arial;
+	text-decoration: none;
+	color: #f3f3f3;
+
+
+}
+.col-md-3 a {
+	text-decoration: none;
+	color: #48D9D9;
+	font-family: arial;
+	font-size: x-large;
+
+}
+.container h2{
+	text-decoration: none;
+	color: #30E581;
+	font-family: arial;
+
+
+
+}
+

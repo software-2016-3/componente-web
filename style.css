@@ -1,30 +1,36 @@
- .textbox
-  {
-  border: 1px solid #DBE1EB;
-  font-size: 18px;
-  font-family:Verdana;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  border-radius: 3px;
-  background: #FFFFFF;
-  opacity: 0.6;
-  border-color: #30E581;
-  background: linear-gradient(left, #FFFFFF, #F7F9FA);
-  background: -moz-linear-gradient(left, #FFFFFF, #F7F9FA);
-  background: -webkit-linear-gradient(left, #FFFFFF, #F7F9FA);
-  background: -o-linear-gradient(left, #FFFFFF, #F7F9FA);
-  
- 
-  }
-*{
-	padding: 0px;
-	margin: 0px;
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?wtc0h4');
+  src:  url('fonts/icomoon.eot?wtc0h4#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?wtc0h4') format('truetype'),
+    url('fonts/icomoon.woff?wtc0h4') format('woff'),
+    url('fonts/icomoon.svg?wtc0h4#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-body {
-background-image: url('imagenes/fondo2.jpeg');
-background-repeat: repeat-y;
-width: 100%;
+
+.icon-stats-dots:before {
+  content: "\e99b";
 }
+.icon-road:before {
+  content: "\e9b1";
+}
+.icon-download3:before {
+  content: "\e9c7";
+}
+
