@@ -1,0 +1,81 @@
+<html ng-app="proyecto">
+	<head>
+		<title>
+			MotivaBici - Inicio
+		</title>
+		<link rel="stylesheet" href="../recursos/style.css">
+		<link rel="stylesheet" type="text/css" href="../recursos/estilo.css">
+		<link rel="stylesheet" href="../recursos/css/normalize.css">
+		<link rel="stylesheet" href="/maps/documentation/javascript/demos/demos.css">
+		<script src="../recursos/js/jquery.js" type="text/javascript"></script>
+	    <script src="../recursos/js/modernizr.js" type="text/javascript"></script>
+		
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+	</head>
+	<body ng-controller = "Principal as datos" >
+	<div align=center>
+        <div class="menu">
+			<ul class="nav">
+			    <li id="motiva"><a href="" id="motiva">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="icon-list"></span> </a>
+				<li><a href=""><span class="icon-road"></span>&nbsp;Recorridos </a>
+					<ul class="nav1">
+
+						<li><a href="">Lista de recorridos</a></li>
+						<li><a href="">Mostrar recorridos</a></li>
+						<li><a href="">Perfil topografico</a></li>
+						<li><a href="">Resumen</a><span class=""></span> </a>
+						</li>
+					</ul>
+				</li>
+				<li><a href=""><span class="icon-download3"></span>&nbsp;Descargas</a>
+
+				</li>
+				<li><a id="" href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+
+				</li>
+			</ul>
+		</div>
+		<br>
+	</br>
+	<br>
+	</br>
+	<div  class="caja_cris"  >
+		<br>
+		</br>
+    	<div class="circulo" style=" margin:0% 0% 0% 32%"><br></div>
+			
+			<div class="container">
+			<h3> {{datos.user.nombre}}  {{datos.user.apellido}}  </h3>
+			<br>
+            <h2>Mis recorridos: </h2>
+			
+            <div class="col-md-3" >
+                <div ng-repeat="route in datos.routes" class="route-item">
+                    <a href="" ng-click="datos.showRoute(route)">{{route.nombre_ruta}} ({{route.fecha | date}})</a>
+                </div>
+            </div>
+            
+        </div>
+			<br><br>
+		
+	
+
+
+	
+	       
+	
+		
+      
+	
+		
+      </div>  
+
+	</div>	
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-qq6MWiT9hdeNqvCQjZPpuSZI0wRJ5qw&callback=initMap"></script>
+	    <script src="../recursos/js/angular.min.js" charset="utf-8"></script>
+        <script src="../recursos/js/Chart.js" charset="utf-8"></script>
+        <script src="../recursos/js/datos.js" charset="utf-8"></script>
+	</body>
+	
+</html>
