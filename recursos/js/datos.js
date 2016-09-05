@@ -35,8 +35,13 @@
                             },
                             "waypoint":
 							{
-								"lat":7.134596, 
-								"lng":-73.121662
+								"lat":7.304466, 
+								"lng":-73.458456
+							},
+							"waypoint1":
+							{
+								"lat":7.141711,
+								"lng": -73.128339
 							},
                             "fecha": "2016-09-04",
 							"altmax":"867 m", 
@@ -68,8 +73,13 @@
 							},
                             "waypoint":
 							{
-								"lat":7.134596, 
-								"lng":-73.121662
+								"lat": 5.950267, 
+								"lng":-73.651926
+							},
+							"waypoint1":
+							{
+								"lat":5.999946, 
+								"lng": -73.613917
 							},
                             "fecha": "2016-09-05",
 							"altmax":"1732m", 
@@ -101,8 +111,13 @@
 							},
                             "waypoint":
 							{
-								"lat":7.134596, 
-								"lng":-73.121662
+								"lat":5.925077, 
+								"lng":-73.678342
+							},
+							"waypoint1":
+							{
+								"lat":5.939078, 
+								"lng": -73.649159
 							},
                             "fecha": "2016-09-07",
 							"altmax":"2019m", 
@@ -120,8 +135,8 @@
 								 
                             },
 							"destino": {
-                                "lat": 7.281026, 
-                                "lng": -72.967052
+                                "lat":  7.071595, 
+                                "lng": -73.169890 
 								 
                             },
                             "distancia": {
@@ -134,15 +149,20 @@
 							},
                             "waypoint":
 							{
-								"lat":7.134596, 
-								"lng":-73.121662
+								"lat":7.375064, 
+								"lng":-72.978187
+							},
+							"waypoint1":
+							{
+								 "lat": 7.281026, 
+                                "lng": -72.967052
 							},
                             "fecha": "2016-09-08",
 							"altmax":"2005m", 
 							"altmin":"672m",
 							"ascenso":"2550 m",
-							"descenso":"1242m",
-							"nombre_ruta": "Giron- Charta"
+							"descenso":"2550 m",
+							"nombre_ruta": "Giron- Charta- Giron"
                             
                             
                         
@@ -154,8 +174,8 @@
 								 
                             },
 							"destino": {
-                                "lat": 5.631914,
-                                "lng":  -73.529213
+                                "lat":  5.879976,
+                                "lng":  -73.677720
 								 
                             },
                             "distancia": {
@@ -168,15 +188,20 @@
 							},
                             "waypoint":
 							{
-								"lat":7.134596, 
-								"lng":-73.121662
+								"lat":5.810526, 
+								"lng":-73.494801
+							},
+							"waypoint1":
+							{
+								"lat": 5.631914,
+                                "lng":  -73.529213
 							},
                             "fecha": "2016-09-09",
 							"altmax":"2448m", 
 							"altmin":"1593m",
 							"ascenso":"1340 m",
-							"descenso":"1810m",
-							"nombre_ruta": "Puente Nacional - Villa de Leyva"
+							"descenso":"1340 m",
+							"nombre_ruta": "Puente Nacional - Villa de Leyva - Puente Nacional "
                             
                             
                         
@@ -212,7 +237,8 @@
                     
                     origin : route.origen,
                     destination : route.destino,
-					waypoints: [{location: route.waypoint, stopover: false}],
+					waypoints: [{location: route.waypoint, stopover: false},
+						{location: route.waypoint1 , stopover:false}],
                     optimizeWaypoints: true,
 					
                     travelMode : google.maps.DirectionsTravelMode.DRIVING
